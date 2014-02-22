@@ -1,0 +1,26 @@
+pidfile = "/var/run/lusin_counter.pid";
+logfile = "/var/log/lusin_counter.log";
+user = "www-data";
+group = "www-data";
+storage-server-host = "127.0.0.1";
+storage-server-port = 803;
+unique-id-line = "unique-1";
+rules = (
+{
+	id = 0;
+	enabled = true;
+	desc = "Http traffic";
+	filter = "port http";
+	device = "eth0";
+	dump-limit = 10;
+},
+{
+	id = 1;
+	enabled = true;
+	desc = "SSH traffic";
+	filter = "port ssh";
+	device = "eth0";
+	dump-limit = 10;
+}
+
+);
